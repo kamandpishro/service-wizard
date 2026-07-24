@@ -1,8 +1,7 @@
 import localFont from 'next/font/local';
 import './globals.css';
 import IRootLayout from './type';
-import Link from 'next/link';
-
+import { Toaster } from 'react-hot-toast';
 const vazirMatn = localFont({
   src: [
     {
@@ -22,7 +21,10 @@ const vazirMatn = localFont({
 export default function RootLayout({ children }: IRootLayout) {
   return (
     <html dir="rtl" lang="fa">
-      <body className={`${vazirMatn.className} no-scrollbar`}>{children}</body>
+      <body className={`${vazirMatn.className} no-scrollbar`}>
+        {children}
+        <Toaster position="top-center" />
+      </body>
     </html>
   );
 }
